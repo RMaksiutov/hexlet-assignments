@@ -34,10 +34,10 @@ public class Application {
 
     @GetMapping("/posts/{id}")
     public Optional<Post> show(@PathVariable String id) {
-        var page = posts.stream()
+        var post = posts.stream()
                 .filter(p -> p.getId().equals(id))
                 .findFirst();
-        return page;
+        return post;
     }
 
     @PostMapping("/posts") // Создание страницы
